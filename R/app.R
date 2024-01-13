@@ -4,31 +4,6 @@ library( bslib )
 library( htmltools )
 
 
-equation_list <- list(
-
-  c( formula = "$$ E = mc^2 $$", description = "Einstein's Mass-Energy Equivalence"),
-  c( formula = "$$ F = ma $$", description = "Newton's Second Law of Motion"),
-  c( formula = "$$ F = G\\frac{M_1 M_2}{r^2} $$", description = "Newton's Law of Gravitation"),
-  c( formula = "$$ a^2 + b^2 = c^2 $$", description = "Pythagorean Theorem" ),
-  c( formula = "$$ \\hat{H}\\Psi = i\\hbar\\frac{\\partial\\Psi}{\\partial t} $$", description = "The Schrödinger Equation"),
-  c( formula = "$$ dS \\geq 0 $$", description = "Second Law of Thermodynamics" ),
-  c( formula = "$$ \\frac{\\partial^2 u}{\\partial t^2} = v^2 \\nabla^2 u $$", descrption = "The Wave Equation"),
-  c( formula = "$$ G_{\\mu\\nu} + \\Lambda g_{\\mu\\nu} = \\frac{8\\pi G}{c^4}T_{\\mu\\nu} $$", descrption = "The Einstein Field Equations"),
-  c( formula = "$$ \\Delta P \\Delta x \\geq \\frac{\\hbar}{2} $$", descrption = "Heisenberg's Uncertainty Principle"),
-  c( formula = "$$ S = k_B \\ln W $$", descrption = "Boltzmann Entropy"),
-  c( formula = "$$ E = hv $$", descrption = "Planck's Equation"),
-  c( formula = "$$ e ^{i\\pi} + 1 = 0 $$", descrption = "Euler's Identity"),
-  c( formula = "$$ J = -D\\frac{d\\varphi}{dx} $$", descrption = "Fick's First Law of Diffusion"),
-  c( formula = "$$ x^2 \\frac{d^2y}{dx^2} + x \\frac{dy}{dx} + (x^2 - \\alpha^2)y = 0 $$", descrption = "Bessel's Differential Equation") 
-)
-
-# generate_equation <- function(){
-#   
-#   n_equations <- 
-#   
-#   ind <- 
-# }
-
 run_app <- function(){
 
   shinyApp(
