@@ -66,15 +66,15 @@ run_app <- function(){
         
         req( input$go )
         
-        ind <- sample(length(equation_list), 1)
+        equation <- generate_equation()
         
         output$equation <- renderUI({
           
-          withMathJax( equation_list[[ind]][1] )
+          withMathJax( equation$formula )
           
         })
         
-        output$description <- renderText( equation_list[[ind]][2] )
+        output$description <- renderText( equation$description )
         
       })
       
