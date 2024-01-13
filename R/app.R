@@ -3,7 +3,6 @@ library( shiny )
 library( bslib )
 library( htmltools )
 
-
 run_app <- function(){
 
   shinyApp(
@@ -12,9 +11,6 @@ run_app <- function(){
       
       title = "Equation Generator",
       theme = bs_theme("cosmo", version = "5"),
-      header = NULL,
-      
-      sidebar = NULL,
       
       nav_panel(
         title = "Home",
@@ -58,7 +54,7 @@ run_app <- function(){
           )
         )
       )
-    ),
+    ), # <-- End UI
     
     server = function( input, output, session ){
       
@@ -68,19 +64,15 @@ run_app <- function(){
         
         equation <- generate_equation()
         
-        output$equation <- renderUI({
-          
-          withMathJax( equation$formula )
-          
-        })
+        output$equation <- renderUI( withMathJax( equation$formula ) )
         
         output$description <- renderText( equation$description )
         
-      })
+      }) # <-- End observeEvent
       
-    }
+    } # <-- End Server
     
-  )
+  ) # <-- End ShinyApp
 
-}
+} # <-- End function
 
