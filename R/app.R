@@ -1,50 +1,50 @@
 
 run_app <- function(){
 
-  shinyApp(
+  shiny::shinyApp(
     
-    ui = page_navbar(
+    ui = bslib::page_navbar(
       
       title = "Equation Generator",
-      theme = bs_theme("cosmo", version = "5"),
+      theme = bslib::bs_theme("cosmo", version = "5"),
       
-      nav_panel(
+      bslib::nav_panel(
         title = "Home",
         
-          layout_column_wrap(
+          bslib::layout_column_wrap(
             width = 1/2,
             
-            card(
+            bslib::card(
               
-              div(
+              htmltools::div(
                 
-                h3("Welcome to the Equation Generator."),
-                h5("The application you didn't know you needed."),
-                hr(),
-                h6("Have you ever needed to prodcue a random equation? Well, this is the app for you!"),
+                htmltools::h3("Welcome to the Equation Generator."),
+                htmltools::h5("The application you didn't know you needed."),
+                htmltools::hr(),
+                htmltools::h6("Have you ever needed to prodcue a random equation? Well, this is the app for you!"),
                 
-                p("Need to impress a friend? Looking for that intellectual gap filler?")
+                htmltools::p("Need to impress a friend? Looking for that intellectual gap filler?")
               )
               
             ),
             
-            card(
+            bslib::card(
             
-              div( class = "container",
+              htmltools::div( class = "container",
                    style = "margin-top: 4rem;",
                 
-                div( class = "container text-center",
-                  h4("Click the button to generate a random equation!"),
+                   htmltools::div( class = "container text-center",
+                                   htmltools::h4("Click the button to generate a random equation!"),
                   
-                  actionButton( inputId = "go", label = "Go!", width = "50%", class = "mt-4 mb-4 btn-primary"),
+                  shiny::actionButton( inputId = "go", label = "Go!", width = "50%", class = "mt-4 mb-4 btn-primary"),
                     
-                    div( class = "container d-flex align-items-center justify-content-center", 
+                  htmltools::div( class = "container d-flex align-items-center justify-content-center", 
                          style = "height: 100px; margin-top: 3rem; border: solid black 1px;",
                       
-                         uiOutput("equation")
+                         shiny::uiOutput("equation")
                     ),
                   
-                   h5( textOutput("description"), class="mt-3")
+                  htmltools::h5( shiny::textOutput("description"), class="mt-3")
                 )
               )
           )
@@ -54,15 +54,15 @@ run_app <- function(){
     
     server = function( input, output, session ){
       
-      observeEvent( input$go, {
+      shiny::observeEvent( input$go, {
         
-        req( input$go )
+        shiny::req( input$go )
         
         equation <- generate_equation()
         
-        output$equation <- renderUI( withMathJax( equation$formula ) )
+        output$equation <- shiny::renderUI( withMathJax( equation$formula ) )
         
-        output$description <- renderText( equation$description )
+        output$description <- shiny::renderText( equation$description )
         
       }) # <-- End observeEvent
       
