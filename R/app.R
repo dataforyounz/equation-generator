@@ -1,8 +1,4 @@
 
-library( shiny )
-library( bslib )
-library( htmltools )
-
 run_app <- function(){
 
   shinyApp(
@@ -71,8 +67,6 @@ run_app <- function(){
       }) # <-- End observeEvent
       
     } # <-- End Server
-    
   ) # <-- End ShinyApp
-
 } # <-- End function
 
