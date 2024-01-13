@@ -19,7 +19,7 @@ run_app <- function(){
               htmltools::div(
                 
                 htmltools::h3("Welcome to the Equation Generator."),
-                htmltools::h5("The application you didn't know you needed."),
+                htmltools::h5("The application you didn't know you needed!"),
                 htmltools::hr(),
                 htmltools::h6("Have you ever needed to prodcue a random equation? Well, this is the app for you!"),
                 
